@@ -1,0 +1,8 @@
+## Interface: 30300
+## Title: WoW Dungeon Atlas
+## Notes: Dungeon Atlas (Encounter Journal) backport for WoW 3.3.5a
+## Notes-ruRU: Бэкпорт Атласа Подземелий (Encounter Journal) для WoW 3.3.5a
+## Version: 3.3.5-210928
+## SavedVariables: WDM_EJ_db
+## OptionalDeps: Ace3
+## X-Category: Map/Minimap
