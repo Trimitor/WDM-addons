@@ -1,5 +1,5 @@
 # WDM-Addons
-:tw-1f1f7-1f1fa: Сборник аддонов, совместимых с картами подземелий Классики и БК для Wrath of the Lich King.
+:ru: Сборник аддонов, совместимых с картами подземелий Классики и БК для Wrath of the Lich King.
 В данный сборник входят следующие аддоны:
 
 ### Mapster
@@ -25,4 +25,4 @@
 
 ------------
 
-:tw-1f1fa-1f1f8: English description Coming Soon
+:us: English description Coming Soon
