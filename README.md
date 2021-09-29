@@ -4,6 +4,7 @@
 
 ### Mapster
 Ссылка на оригинальный аддон: [CurseForge](https://www.curseforge.com/wow/addons/mapster/files/436697 "CurseForge") (версия 1.3.9)
+
 Автор оригинального аддона: [Nevcairiel](https://github.com/Nevcairiel "Nevcairiel")
 
 Нововведения:
