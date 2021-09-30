@@ -1,0 +1,25 @@
+## Interface: 30300
+## Title: WoW Dungeon Maps
+## Notes: Addon for fixing and expanding the patch functionality.
+## Notes-ruRU: Аддон для исправлений и расширения функционала патча.
+## Version: 3.3.5-210928M
+## SavedVariables: WDMdb
+## OptionalDeps: LibBabble-SubZone-3.0, Ace3
+## X-Category: Map/Minimap
+
+# Libs
+Libs\Astrolabe\Load.xml
+EmbedLibs.xml
+
+# Languages
+Locale\GlobalStrings.locale.xml
+Locale\WDM.locale.xml
+
+# Core
+_Constants.lua
+WDM.lua
+
+# Modules
+DungeonLocation.lua
+MicroDungeons.lua
+POIIcons.lua
