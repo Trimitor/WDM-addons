@@ -1,0 +1,14 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="WDM\WDM.deDE.lua"/>
+	<Script file="WDM\WDM.enCN.lua"/>
+	<Script file="WDM\WDM.enUS.lua"/>
+	<Script file="WDM\WDM.enGB.lua"/>
+	<Script file="WDM\WDM.esES.lua"/>
+	<Script file="WDM\WDM.esMX.lua"/>
+	<Script file="WDM\WDM.frFR.lua"/>
+	<Script file="WDM\WDM.koKR.lua"/>
+	<Script file="WDM\WDM.ruRU.lua"/>
+	<Script file="WDM\WDM.zhCN.lua"/>
+	<Script file="WDM\WDM.zhTW.lua"/>
+</Ui>
