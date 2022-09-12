@@ -1175,6 +1175,12 @@ WorldMapSize = {
 				xOffset = 11625.05968863682,
 				yOffset = 15166.45859885191,
 			},
+			Hyjal = {
+				height = 2131.228227,
+				width = 3207.62896,
+				xOffset = 18203.1527534,
+				yOffset = 6713.0684346,
+			},
 			Moonglade = {
 				height = 1539.572004392277,
 				width = 2308.359613919473,

@@ -1,0 +1,14 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="addon\dede.lua"/> <Script file="global\dede.lua"/>
+	<Script file="addon\encn.lua"/> <Script file="global\encn.lua"/>
+	<Script file="addon\enus.lua"/> <Script file="global\enus.lua"/>
+	<Script file="addon\engb.lua"/> <Script file="global\engb.lua"/>
+	<Script file="addon\eses.lua"/> <Script file="global\eses.lua"/>
+	<Script file="addon\esmx.lua"/> <Script file="global\esmx.lua"/>
+	<Script file="addon\frfr.lua"/> <Script file="global\frfr.lua"/>
+	<Script file="addon\kokr.lua"/> <Script file="global\kokr.lua"/>
+	<Script file="addon\ruru.lua"/> <Script file="global\ruru.lua"/>
+	<Script file="addon\zhcn.lua"/> <Script file="global\zhcn.lua"/>
+	<Script file="addon\zhtw.lua"/> <Script file="global\zhtw.lua"/>
+</Ui>

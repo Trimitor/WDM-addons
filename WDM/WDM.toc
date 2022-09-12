@@ -4,22 +4,22 @@
 ## Notes-ruRU: Аддон для исправлений и расширения функционала патча.
 ## Version: 3.3.5-210928M
 ## SavedVariables: WDMdb
-## OptionalDeps: LibBabble-SubZone-3.0, Ace3
+## OptionalDeps: LibBabble-Zone-3.0, LibBabble-SubZone-3.0, Ace3, Astrolabe
 ## X-Category: Map/Minimap
 
 # Libs
-Libs\Astrolabe\Load.xml
-EmbedLibs.xml
+libs.xml
+libs\LibBabble-Zone-3.0\lib.xml
+libs\Astrolabe\Load.xml
 
 # Languages
-Locale\GlobalStrings.locale.xml
-Locale\WDM.locale.xml
+locale\locale.xml
 
 # Core
-_Constants.lua
 WDM.lua
 
 # Modules
-DungeonLocation.lua
-MicroDungeons.lua
-POIIcons.lua
+_data.lua
+atlaspoi.lua
+minimap.lua
+zonelevel.lua
