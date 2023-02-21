@@ -1,4 +1,4 @@
-if (GetLocale() == "enUS") then
+if (GetLocale() == "enGB") then
 
 DUNGEON_FLOOR_AHNQIRAJ1 = "The Hive Undergrounds";
 DUNGEON_FLOOR_AHNQIRAJ2 = "The Temple Gates";
@@ -33,7 +33,8 @@ DUNGEON_FLOOR_COILFANGRESERVOIR1 = "Serpentshrine Cavern";
 DUNGEON_FLOOR_COTHILLSBRADFOOTHILLS1 = "Old Hillsbrad";
 DUNGEON_FLOOR_COTMOUNTHYJAL1 = "Battle for Mount Hyjal";
 DUNGEON_FLOOR_COTTHEBLACKMORASS1 = "The Black Morass";
-DUNGEON_FLOOR_DEEPRUNTRAM1 = "Deeprun Tram";
+DUNGEON_FLOOR_DEEPRUNTRAM1 = "Deeprun Tram: Stormwind";
+DUNGEON_FLOOR_DEEPRUNTRAM2 = "Deeprun Tram: Ironforge";
 DUNGEON_FLOOR_DIREMAUL1 = "Gordok Commons";
 DUNGEON_FLOOR_DIREMAUL2 = "Capital Gardens";
 DUNGEON_FLOOR_DIREMAUL3 = "Court of the Highborne";

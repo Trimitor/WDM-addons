@@ -1,11 +1,16 @@
 local WDM = LibStub("AceAddon-3.0"):GetAddon("WDM")
 local MM = WDM:NewModule("Minimap", "AceHook-3.0")
 
-local defaults = { 
-    profile = {
-        ["show_minimap"] = true,
-    },
-}
+local defaults = { profile = {
+    ["show_minimap"] = false,
+    ["show_zonelevel"] = false,
+    ["show_taxinode"] = true,
+    ["show_taxinode_opposite"] = false,
+    ["show_taxinode_continent"] = true,
+    ["show_taxinode_continent_opposite"] = false,
+    ["show_instance"] = true,
+    ["debugmode"] = false,
+},}
 
 function MM:OnInitialize()
     self.db = LibStub("AceDB-3.0"):New("WDMdb", defaults, true)

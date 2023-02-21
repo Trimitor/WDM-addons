@@ -1,4 +1,4 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "zhCN")
+local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "enCN")
 if not L then return end
 
 L["taxinode_acherus"] = "阿彻鲁斯：黑锋要塞"
@@ -30,7 +30,7 @@ L["taxinode_conquesthold"] = "征服堡，灰熊丘陵"
 L["taxinode_cosmowrench"] = "扳钳镇，虚空风暴"
 L["taxinode_crossroads"] = "十字路口，贫瘠之地"
 L["taxinode_crusaderspinnacle"] = "北伐军之峰，冰冠冰川"
-L["taxinode_dalaran"] = "达拉然"
+L["taxinode_dalaran"] = "克拉苏斯平台, 达拉然"
 L["taxinode_darkshire"] = "夜色镇，暮色森林"
 L["taxinode_deathsrise"] = "死亡高地，冰冠冰川"
 L["taxinode_dunnifflelem"] = "丹尼芬雷，风暴峭壁"

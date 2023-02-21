@@ -1,8 +1,9 @@
 ## Interface: 30300
 ## Title: WoW Dungeon Maps
-## Notes: Addon for fixing and expanding the patch functionality.
-## Notes-ruRU: Аддон для исправлений и расширения функционала патча.
-## Version: 3.3.5-210928M
+## Notes: It is a great addition to the classic dungeon map patch. Expands the features, adds new elements related to the World Map.
+## Notes-ruRU: Является отличным дополнением к патчу карт классических подземелий. Расширяет возможности, добавляет новые элементы, связанные с картой мира.
+## Version: 1.0.4
+## Author: Trimitor
 ## SavedVariables: WDMdb
 ## OptionalDeps: LibBabble-Zone-3.0, LibBabble-SubZone-3.0, Ace3, Astrolabe
 ## X-Category: Map/Minimap
@@ -13,7 +14,7 @@ libs\LibBabble-Zone-3.0\lib.xml
 libs\Astrolabe\Load.xml
 
 # Languages
-locale\locale.xml
+locales\locales.xml
 
 # Core
 WDM.lua

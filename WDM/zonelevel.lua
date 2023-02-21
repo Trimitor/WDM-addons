@@ -4,11 +4,16 @@ local ZoneLevel = WDM:NewModule("ZoneLevel", "AceHook-3.0")
 local LBZ = LibStub("LibBabble-Zone-3.0", true)
 local BZ = LBZ and LBZ:GetLookupTable() or setmetatable({}, {__index = function(t,k) return k end})
 
-local defaults = { 
-    profile = {
-        ["show_zonelevel"] = true,
-    },
-}
+local defaults = { profile = {
+    ["show_minimap"] = false,
+    ["show_zonelevel"] = false,
+    ["show_taxinode"] = true,
+    ["show_taxinode_opposite"] = false,
+    ["show_taxinode_continent"] = true,
+    ["show_taxinode_continent_opposite"] = false,
+    ["show_instance"] = true,
+    ["debugmode"] = false,
+},}
 
 local zones = {
     ["Moonglade"] = {0,0},

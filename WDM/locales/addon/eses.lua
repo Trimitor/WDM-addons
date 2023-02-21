@@ -1,4 +1,4 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "esMX")
+local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "esES")
 if not L then return end
 
 L["taxinode_acherus"] = "Acherus: El Bastión de Ébano"
@@ -30,7 +30,7 @@ L["taxinode_conquesthold"] = "Bastión de la Conquista, Colinas Pardas"
 L["taxinode_cosmowrench"] = "Cosmotirón, Tormenta Abisal"
 L["taxinode_crossroads"] = "El Cruce, Los Baldíos"
 L["taxinode_crusaderspinnacle"] = "Pináculo de los Cruzados, Corona de Hielo"
-L["taxinode_dalaran"] = "Dalaran"
+L["taxinode_dalaran"] = "Alto de Krasus, Dalaran"
 L["taxinode_darkshire"] = "Villa Oscura, Bosque del Ocaso"
 L["taxinode_deathsrise"] = "Ascenso de la Muerte, Corona de Hielo"
 L["taxinode_dunnifflelem"] = "Dun Nifflelem, Las Cumbres Tormentosas"

@@ -5,13 +5,29 @@ local options = {
     name = "WoW Dungeon Maps",
     handler = WDM,
     type = "group",
-    args = {},
-}
-local defaults = {
-    profile =  {
-
+    args = {
+        show_minimap = {
+            type = "toggle",
+            name = L["show_minimap_text"],
+            desc = L["show_minimap_warn_text"],
+            get = "GetMinimap",
+            set = "ToggleMinimap",
+            descStyle = "inline",
+            width = "double",
+        },
     },
 }
+
+local defaults = { profile = {
+    ["show_minimap"] = false,
+    ["show_zonelevel"] = false,
+    ["show_taxinode"] = true,
+    ["show_taxinode_opposite"] = false,
+    ["show_taxinode_continent"] = true,
+    ["show_taxinode_continent_opposite"] = false,
+    ["show_instance"] = true,
+    ["debugmode"] = false,
+},}
 
 
 function WDM:OnInitialize()
@@ -25,7 +41,31 @@ end
 function WDM:ChatCommand(input)
     if not input or input:trim() == "" then
         InterfaceOptionsFrame_OpenToCategory(self.optionsFrame)
+    elseif input == "debug" then
+        -- Toggle the debug option
+        self:SetDebug(nil, not self:GetDebug())
     else
         LibStub("AceConfigCmd-3.0"):HandleCommand("wdm", "WDM", input)
     end
+end
+
+function WDM:GetDebug(info)
+    return self.db.profile.debugmode
+end
+
+function WDM:SetDebug(info, value)
+    self.db.profile.debugmode = value
+    if self.db.profile.debugmode then
+        print("[WDM] Debugging |c00569C08enabled|r")
+    else
+        print("[WDM] Debugging |c00FD1A36disabled|r")
+    end
+end
+
+function WDM:GetMinimap(info)
+    return self.db.profile.show_minimap
+end
+
+function WDM:ToggleMinimap(info, value)
+    self.db.profile.show_minimap = value
 end

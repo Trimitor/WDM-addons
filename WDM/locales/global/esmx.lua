@@ -1,4 +1,4 @@
-if (GetLocale() == "esES") then
+if (GetLocale() == "esMX") then
 
 DUNGEON_FLOOR_AHNQIRAJ1 = "Las Puertas del Templo";
 DUNGEON_FLOOR_AHNQIRAJ2 = "El Subterráneo de la Colmena";
@@ -33,7 +33,8 @@ DUNGEON_FLOOR_COILFANGRESERVOIR1 = "Caverna Santuario Serpiente";
 DUNGEON_FLOOR_COTHILLSBRADFOOTHILLS1 = "Antigua Trabalomas";
 DUNGEON_FLOOR_COTMOUNTHYJAL1 = "La Cima Hyjal";
 DUNGEON_FLOOR_COTTHEBLACKMORASS1 = "La Ciénaga Negra";
-DUNGEON_FLOOR_DEEPRUNTRAM1 = "Tranvía Subterráneo";
+DUNGEON_FLOOR_DEEPRUNTRAM1 = "Tranvía Subterráneo: Ventormenta";
+DUNGEON_FLOOR_DEEPRUNTRAM2 = "Tranvía Subterráneo: Forjaz";
 DUNGEON_FLOOR_DIREMAUL1 = "Ágora de Gordok";
 DUNGEON_FLOOR_DIREMAUL2 = "Jardines de la Capital";
 DUNGEON_FLOOR_DIREMAUL3 = "Corte de los Altonato";

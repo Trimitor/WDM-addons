@@ -6,15 +6,16 @@ local Astrolabe = DongleStub("Astrolabe-0.4")
 local LBZ = LibStub("LibBabble-Zone-3.0", true)
 local BZ = LBZ and LBZ:GetLookupTable() or setmetatable({}, {__index = function(t,k) return k end})
 
-local defaults = { 
-    profile = {
-        ["show_taxinode"] = true,
-        ["show_taxinode_opposite"] = false,
-        ["show_taxinode_continent"] = true,
-        ["show_taxinode_continent_opposite"] = true,
-        ["show_instance"] = true,
-    },
-} 
+local defaults = { profile = {
+    ["show_minimap"] = false,
+    ["show_zonelevel"] = false,
+    ["show_taxinode"] = true,
+    ["show_taxinode_opposite"] = false,
+    ["show_taxinode_continent"] = true,
+    ["show_taxinode_continent_opposite"] = false,
+    ["show_instance"] = true,
+    ["debugmode"] = false,
+},} 
 
 -- Texture
 local atlasTex = "Interface\\AddOns\\WDM\\Textures\\ObjectIconsAtlas"
@@ -208,24 +209,38 @@ local atlasPOI = {
     },
     ["taxinode_continent"] = {
         [1] = {
-            { "neutral", -999.103, -3823.233, "Корабль в Пиратскую бухту" },
-            { "alliance", -4001.794, -4726.519, "Корабль в Гавань Менетилов" },
-            { "alliance", 6421.85, 818.768, "Корабль в Штормград" },
-            { "alliance", 6579.306, 768.255, "Корабль к Тельдрассил" },
-            { "alliance", 6542.416, 926.931, "Корабль в Экзодар" },
+            { "neutral", -999.103, -3823.233, L["taxinode_continent_bootybay"] },
+            { "alliance", -4001.794, -4726.519, L["taxinode_continent_menethilharbor"] },
+            { "alliance", 6421.85, 818.768, L["taxinode_continent_stormwind"] },
+            { "alliance", 6579.306, 768.255, L["taxinode_continent_teldrassil"] },
+            { "alliance", 6542.416, 926.931, L["taxinode_continent_exodar"] },
+            { "horde", 1192.31, -4143.297, L["taxinode_continent_warsonghold"] },
+            { "horde", 1134.284, -4141.549, L["taxinode_continent_thunderbluff"] },
+            { "horde", -1029.529, 365.004, L["taxinode_continent_durotar"] },
+            { "horde", 1368.056, -4632.364, L["taxinode_continent_gromgol"] },
+            { "horde", 1312.351, -4654.377, L["taxinode_continent_brill"] },
         },
         [2] = {
-            { "alliance", -8644.71, 1329.167, "Корабль в гавань Аубердина" },
-            { "alliance", -8290.688, 1405.741, "Корабль в крепость Отваги" },
-            { "alliance", -3896.958, -600.345, "Корабль на остров Терамор" },
-            { "alliance", -3726.68, -585.331, "Корабль в бухту Кинжалов" },
-            { "neutral", -14284.961, 558.216, "Корабль в гавань Кабестан" },
-            { "horde", -12448.642, 218.476, "Дирижабль в Дуротар" },
+            { "alliance", -8644.71, 1329.167, L["taxinode_continent_auberdine"] },
+            { "alliance", -8290.688, 1405.741, L["taxinode_continent_valiancekeep"] },
+            { "alliance", -3896.958, -600.345, L["taxinode_continent_theramore"] },
+            { "alliance", -3726.68, -585.331, L["taxinode_continent_daggercapbay"] },
+            { "neutral", -14284.961, 558.216, L["taxinode_continent_ratchet"] },
+            { "horde", -12448.642, 218.476, L["taxinode_continent_durotar"] },
+            { "horde", 2067.855, 297.069, L["taxinode_continent_durotar"] },
+            { "horde", 2056.812, 231.009, L["taxinode_continent_gromgol"] },
+            { "horde", -12401.333, 207.287, L["taxinode_continent_brill"] },
+            { "horde", 2058.611, 373.441, L["taxinode_continent_vengeancelanding"] },
         },
         [4] = {
-            { "alliance", 2231.213, 5132.484, "Корабль в Штормград" },
-            { "alliance", 590.962, -5101.727, "Корабль в Гавань Менетилов" },
-            { "horde", 2837.348, 6185.007, "Дирижабль в Дуротар" },
+            { "alliance", 2231.213, 5132.484, L["taxinode_continent_stormwind"] },
+            { "alliance", 590.962, -5101.727, L["taxinode_continent_menethilharbor"] },
+            { "horde", 2837.348, 6185.007, L["taxinode_continent_durotar"] },
+            { "neutral", 2635.748, 824.325, L["taxinode_continent_kamagua"] },
+            { "neutral", 791.73, -2796.873, L["taxinode_continent_moaki"] },
+            { "neutral", 2618.897, 954.482, L["taxinode_continent_unupe"] },
+            { "neutral", 2818.209, 4014.899, L["taxinode_continent_moaki"] },
+            { "horde", 1983.33, -6088.723, L["taxinode_continent_brill"] },
         },
     },
     ["instance"] = {
@@ -306,80 +321,6 @@ local atlasPOI = {
             {   "raid",        3601.0,     196.0,      BZ["The Ruby Sanctum"],           LFG_TYPE_RAID,    },
             {   "raid",        5874.0,     2111.0,     BZ["Icecrown Citadel"],           LFG_TYPE_RAID,    },
         },
-    }
-}
-
-local MicroDungeonsList = {
-    ["AzuremystIsle"] = { 
-        "StillpineHold", 
-        "TidesHollow",
-    },
-    ["Badlands"] = {
-        "Uldaman",
-    },
-    ["Barrens"] = { 
-        "WailingCavernsBarrens",
-    },
-    ["BurningSteppes"] = { 
-        "BlackrockMountain",
-    },
-    ["ColdridgeValley"] = { 
-        "FrostmaneHovel",
-    },
-    ["Desolace"] =  { 
-        "MaraudonOutside", 
-    },
-    ["DunMorogh"] = { 
-        "ColdridgePass",
-        "FrostmaneHold",
-        "Gnomeregan",
-        "GolBolarQuarry",
-        "TheGrizzledDen",
-    },
-    ["Durotar"] = { 
-        "BurningBladeCoven",
-        "DustwindCave",
-        "SkullRock",
-        "TiragardeKeep",
-    },
-    ["Elwynn"] = { 
-        "Fargodeepmine",
-        "JasperlodeMine",
-    },
-    ["Ghostlands"] = { 
-        "AmaniCatacombs",
-    },
-    ["Mulgore"] = { 
-        "PalemaneRock", 
-        "TheVentureCoMine", 
-    },
-    ["Echo Ridge Mine"] = { 
-        "EchoRidgeMine", 
-    },
-    ["Silithus"] = { 
-        "TwilightsRun",
-    },
-    ["Tanaris"] = { 
-        "CavernsofTime",
-        "TheGapingChasm",
-        "TheNoxiousLair", 
-    },
-    ["Teldrassil"] = { 
-        "BanethilBarrowden",
-        "FelRock",
-        "ShadowthreadCave",
-    },
-    ["Tirisfal"] = { 
-        "NightWebsHollow",
-        "ScarletMonasteryEntrance",
-    },
-    ["UngoroCrater"] = { 
-        "TheSlitheringScar",
-    },
-    ["Westfall"] = { 
-        "DeadminesWestfall",
-        "GoldCoastQuarry",
-        "JangolodeMine",
     },
 }
 
@@ -424,42 +365,26 @@ function DData:AstrolabeCoords(xcoord, ycoord, continent)
 end
 
 function DData:GetListAtlasPOI(continent)
-    local temp_array = {}
     local generated_array = {}
+    local currentZone = GetCurrentMapZone()
     for category, content in pairs(atlasPOI) do
         if self.db.profile["show_"..category] and content[continent] then
-            for index, val in pairs(content[continent]) do
-                local faction, x, y, name, desc = unpack(val);
+            for _, val in pairs(content[continent]) do
+                local faction, x, y, name, desc = unpack(val)
                 local twidth, theight, tleft, tright, ttop, tbottom = self:GetAtlasTextureCoords(category, faction)
-                if not (self:isBlockedPOI(category, faction)) then
-                    x, y = self:AstrolabeCoords(x, y, continent);
-                    x, y = Astrolabe:TranslateWorldMapPosition(continent, 0, x, y, continent, GetCurrentMapZone())
-
-                    if x or y then
-                        if y < 1 and y > 0 and x < 1 and x > 0 and GetCurrentMapZone() ~= 0 then
-                            temp_array = {};
-                            tinsert(temp_array, faction);
-                            tinsert(temp_array, x);
-                            tinsert(temp_array, y);
-                            tinsert(temp_array, name);
-                            tinsert(temp_array, desc or "");
-                            tinsert(temp_array, twidth);
-                            tinsert(temp_array, theight);
-                            tinsert(temp_array, tleft);
-                            tinsert(temp_array, tright);
-                            tinsert(temp_array, ttop);
-                            tinsert(temp_array, tbottom);
-                            tinsert(generated_array, temp_array);
-                        end
+                if not self:isBlockedPOI(category, faction) then
+                    x, y = self:AstrolabeCoords(x, y, continent)
+                    x, y = Astrolabe:TranslateWorldMapPosition(continent, 0, x, y, continent, currentZone)
+                    if x and y and y < 1 and y > 0 and x < 1 and x > 0 and currentZone ~= 0 then
+                        tinsert(generated_array, { faction, x, y, name, desc or "", twidth, theight, tleft, tright, ttop, tbottom })
                     end
-
                 end
             end
         end
     end
-
-    return generated_array;
+    return generated_array
 end
+
 
 function DData:isBlockedPOI(category, faction)
     local playerfaction, _ = UnitFactionGroup("player")
@@ -472,31 +397,16 @@ function DData:GetAtlasTextureCoords(category, faction)
     return unpack(atc)
 end
 
-function DData:GetMapFullInfo()
-    local mapFileName, textureHeight, textureWidth = GetMapInfo();
-    local isMicrodungeon = false;
-    local parentMapName = "";
-
-    for map, mds in pairs(MicroDungeonsList) do
-        for i = 1, #mds do
-            if mds[i] == mapFileName then
-                isMicrodungeon = true
-                parentMapName = map;
-                break
-            end
-        end
-    end
-    return mapFileName, textureHeight, textureWidth, isMicrodungeon, parentMapName
-end
-
 -- debug
 function DData:DebugCoords()
-    local C, Z, x, y = Astrolabe:GetCurrentPlayerPosition()
-    if contCoords[C] and Z == 0 then
-        DEFAULT_CHAT_FRAME:AddMessage("До конвертации: (y: " .. tonumber(string.format("%.3f", x)) .. ", x: " .. tonumber(string.format("%.3f", y)) .. ")" )
-        local conty1, conty2, contx1, contx2 = unpack(contCoords[C]);
-        local ycoord = -x * abs(conty2 - conty1) + conty1;
-        local xcoord = -y * abs(contx2 - contx1) + contx1;
-        DEFAULT_CHAT_FRAME:AddMessage("После конвертации: (y: " .. tonumber(string.format("%.3f", xcoord)) .. ", x: " .. tonumber(string.format("%.3f", ycoord)) .. ")" )
+    if self.db.profile["debugmode"] then 
+        local C, Z, x, y = Astrolabe:GetCurrentPlayerPosition()
+        if contCoords[C] and Z == 0 then
+            DEFAULT_CHAT_FRAME:AddMessage("Local coords: (y: " .. tonumber(string.format("%.3f", x)) .. ", x: " .. tonumber(string.format("%.3f", y)) .. ")" )
+            local conty1, conty2, contx1, contx2 = unpack(contCoords[C]);
+            local ycoord = -x * abs(conty2 - conty1) + conty1;
+            local xcoord = -y * abs(contx2 - contx1) + contx1;
+            DEFAULT_CHAT_FRAME:AddMessage("Global coords: (y: " .. tonumber(string.format("%.3f", xcoord)) .. ", x: " .. tonumber(string.format("%.3f", ycoord)) .. ")" )
+        end
     end
 end
