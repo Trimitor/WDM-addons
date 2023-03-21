@@ -1252,7 +1252,7 @@ elseif GAME_LOCALE == "esES" then
 	["The Prison of Yogg-Saron"] = "La Prisión de Yogg-Saron",
 	["Theramore Isle"] = "Isla Theramore",
 	["The Ring of Valor"] = "El Anillo del Valor",
-	-- ["The Ruby Sanctum"] = "",
+	["The Ruby Sanctum"] = "El Sagrario Rubí",
 	["The Scarlet Enclave"] = "Tierras de la Peste: El Enclave Escarlata",
 	["The Shattered Halls"] = "Las Salas Arrasadas",
 	["The Slave Pens"] = "Recinto de los Esclavos",
@@ -1507,7 +1507,7 @@ elseif GAME_LOCALE == "esMX" then
 	["The Prison of Yogg-Saron"] = "La Prisión de Yogg-Saron",
 	["Theramore Isle"] = "Isla Theramore",
 	["The Ring of Valor"] = "El Anillo del Valor",
-	-- ["The Ruby Sanctum"] = "",
+	["The Ruby Sanctum"] = "El Sagrario Rubí",
 	["The Scarlet Enclave"] = "El Enclave Escarlata",
 	["The Shattered Halls"] = "Las Salas Arrasadas",
 	["The Slave Pens"] = "Recinto de los Esclavos",
@@ -2002,7 +2002,7 @@ elseif GAME_LOCALE == "zhCN" then
 	["The Eye of Eternity"] = "永恒之眼",
 	["The Forbidding Sea"] = "禁忌之海",
 	["The Forge of Souls"] = "灵魂洪炉",
-	["The Frozen Halls"] = "The Frozen Halls", -- Needs review
+	["The Frozen Halls"] = "冰封大殿", -- Needs review
 	["The Frozen Sea"] = "冰冻之海",
 	["The Great Sea"] = "无尽之海",
 	["The Halls of Winter"] = "寒冬之厅",
@@ -2017,7 +2017,7 @@ elseif GAME_LOCALE == "zhCN" then
 	["The Prison of Yogg-Saron"] = "尤格-萨隆的监狱",
 	["Theramore Isle"] = "塞拉摩岛",
 	["The Ring of Valor"] = "勇气竞技场",
-	["The Ruby Sanctum"] = "The Ruby Sanctum", -- Needs review
+	["The Ruby Sanctum"] = "红玉圣殿", -- Needs review
 	["The Scarlet Enclave"] = "血色领地",
 	["The Shattered Halls"] = "破碎大厅",
 	["The Slave Pens"] = "奴隶围栏",
