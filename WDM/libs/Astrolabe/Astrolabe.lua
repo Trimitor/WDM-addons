@@ -1,7 +1,7 @@
 --[[
 Name: Astrolabe
 Revision: $Rev: 107 $
-$Date: 2009-08-05 00:34:29 -0700 (Wed, 05 Aug 2009) $
+$Date: 2009-08-05 08:34:29 +0100 (Wed, 05 Aug 2009) $
 Author(s): Esamynn (esamynn at wowinterface.com)
 Inspired By: Gatherer by Norganna
              MapLibrary by Kristofer Karlsson (krka at kth.se)
@@ -42,7 +42,7 @@ Note:
 -- DO NOT MAKE CHANGES TO THIS LIBRARY WITHOUT FIRST CHANGING THE LIBRARY_VERSION_MAJOR
 -- STRING (to something unique) OR ELSE YOU MAY BREAK OTHER ADDONS THAT USE THIS LIBRARY!!!
 local LIBRARY_VERSION_MAJOR = "Astrolabe-0.4"
-local LIBRARY_VERSION_MINOR = tonumber(string.match("$Revision: 108 $", "(%d+)") or 1)
+local LIBRARY_VERSION_MINOR = tonumber(string.match("$Revision: 107 $", "(%d+)") or 1)
 
 if not DongleStub then error(LIBRARY_VERSION_MAJOR .. " requires DongleStub.") end
 if not DongleStub:IsNewerVersion(LIBRARY_VERSION_MAJOR, LIBRARY_VERSION_MINOR) then return end
@@ -50,7 +50,7 @@ if not DongleStub:IsNewerVersion(LIBRARY_VERSION_MAJOR, LIBRARY_VERSION_MINOR) t
 local Astrolabe = {};
 
 -- define local variables for Data Tables (defined at the end of this file)
-local MinimapSize, ValidMinimapShapes;
+local WorldMapSize, MinimapSize, ValidMinimapShapes;
 
 function Astrolabe:GetVersion()
 	return LIBRARY_VERSION_MAJOR, LIBRARY_VERSION_MINOR;
@@ -1091,12 +1091,6 @@ WorldMapSize = {
 		xOffset = -8590.40725049343,
 		yOffset = 5628.692856102324,
 		zoneData = {
-			AmmenValeStart = {
-				height = 1212.50000001,
-				width = 1818.75,
-				xOffset = 29881.1816407,
-				yOffset = 16404.06640622,
-			},
 			Ashenvale = {
 				height = 3843.722331667447,
 				width = 5766.728885829694,
@@ -1126,12 +1120,6 @@ WorldMapSize = {
 				width = 3262.535628257626,
 				xOffset = 9541.702868577344,
 				yOffset = 3424.87645454774,
-			},
-			CampNaracheStart = {
-				height = 1177.08203125,
-				width = 1766.667968755,
-				xOffset = 16833.265625025,
-				yOffset = 15376.98437498,
 			},
 			Darkshore = {
 				height = 4366.635262519317,
@@ -1175,12 +1163,6 @@ WorldMapSize = {
 				xOffset = 11625.05968863682,
 				yOffset = 15166.45859885191,
 			},
-			Hyjal = {
-				height = 2131.228227,
-				width = 3207.62896,
-				xOffset = 18203.1527534,
-				yOffset = 6713.0684346,
-			},
 			Moonglade = {
 				height = 1539.572004392277,
 				width = 2308.359613919473,
@@ -1198,12 +1180,6 @@ WorldMapSize = {
 				width = 1402.619172463506,
 				xOffset = 20747.42615230776,
 				yOffset = 10525.94819392488,
-			},
-			ShadowglenStart = {
-				height = 966.6669922,
-				width = 1450.000976565,
-				xOffset = 15574.93261721,
-				yOffset = 1766.5673828,
 			},
 			Silithus = {
 				height = 2322.900917404436,
@@ -1253,12 +1229,6 @@ WorldMapSize = {
 				xOffset = 16533.4461782123,
 				yOffset = 18766.43318304924,
 			},
-			ValleyofTrialsStart = {
-				height = 900.0,
-				width = 1350.0,
-				xOffset = 20708.26562503,
-				yOffset = 12799.9003906,
-			},
 			Winterspring = {
 				height = 4733.299352687333,
 				width = 7100.076688034489,
@@ -1305,23 +1275,11 @@ WorldMapSize = {
 				xOffset = 18438.63415866318,
 				yOffset = 18207.66550773985,
 			},
-			ColdridgeValley = {
-				height = 643.75,
-				width = 964.583007813,
-				xOffset = 17192.803710912,
-				yOffset = 17138.84375,
-			},
 			DeadwindPass = {
 				height = 1666.673717206878,
 				width = 2499.999255461505,
 				xOffset = 19005.30099399293,
 				yOffset = 21043.09319963172,
-			},
-			DeathknellStart = {
-				height = 727.08300781,
-				width = 1089.58398438,
-				xOffset = 16024.05371091,
-				yOffset = 8905.51074219,
 			},
 			DunMorogh = {
 				height = 3283.346244075043,
@@ -1383,12 +1341,6 @@ WorldMapSize = {
 				xOffset = 20165.71744013867,
 				yOffset = 15663.90644131906,
 			},
-			Northshire = {
-				height = 645.83398438,
-				width = 968.75,
-				xOffset = 17984.4707031,
-				yOffset = 19747.17578125,
-			},
 			Redridge = {
 				height = 1447.921846941264,
 				width = 2170.833008876805,
@@ -1424,12 +1376,6 @@ WorldMapSize = {
 				width = 6381.247773741421,
 				xOffset = 15951.13530113703,
 				yOffset = 22345.18245588815,
-			},
-			SunstriderIsleStart = {
-				height = 1066.66699217,
-				width = 1600.0,
-				xOffset = 23555.30468748,
-				yOffset = 343.0107422,
 			},
 			Sunwell = {
 				height = 2218.75784157939,

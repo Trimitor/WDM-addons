@@ -15,6 +15,15 @@ local options = {
             descStyle = "inline",
             width = "double",
         },
+        microdungeons = {
+            type = "toggle",
+            name = L["microdungeons_text"],
+            desc = L["microdungeons_warn_text"],
+            get = "GetMicrodungeons",
+            set = "ToggleMicrodungeons",
+            descStyle = "inline",
+            width = "double",
+        },
     },
 }
 
@@ -26,6 +35,7 @@ local defaults = { profile = {
     ["show_taxinode_continent"] = true,
     ["show_taxinode_continent_opposite"] = false,
     ["show_instance"] = true,
+    ["microdungeons"] = false,
     ["debugmode"] = false,
 },}
 
@@ -62,8 +72,16 @@ function WDM:SetDebug(info, value)
     end
 end
 
+function WDM:GetMicrodungeons(info)
+    return self.db.profile.microdungeons
+end
+
 function WDM:GetMinimap(info)
     return self.db.profile.show_minimap
+end
+
+function WDM:ToggleMicrodungeons(info, value)
+    self.db.profile.microdungeons = value
 end
 
 function WDM:ToggleMinimap(info, value)

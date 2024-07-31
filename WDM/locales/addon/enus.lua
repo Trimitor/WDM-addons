@@ -4,6 +4,8 @@ if not L then return end
 L["debugmode_text"] = "Debug Mode"
 L["show_minimap_text"] = "World Map Icon (before Dragonflight)"
 L["show_minimap_warn_text"] = "|c00FD1A36Disable if you use addons that modify interface |r (requires interface reloading - /reload)"
+L["microdungeons_text"] = "Microdungeons mode |c00FD1A36beta|r"
+L["microdungeons_warn_text"] = "Enable fix for microdungeons |c00FD1A36(patch-enUS-N.MPQ is required)"
 L["atlas_tracking_title_text"] = "Show:"
 L["show_instance_text"] = "Dungeon Entrances"
 L["show_taxinode_alliance_text"] = "Alliance Flight Points"

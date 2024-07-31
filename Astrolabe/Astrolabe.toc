@@ -1,0 +1,11 @@
+## Interface: 30300
+## Title: |cff4169E1Astrolabe|r
+## Title-ruRU: |cff4169E1Астролябия|r
+## Notes: Fix for Astrolabe 
+## Notes-ruRU: Исправления к Astrolabe
+## Version: 0.5
+## Author: Esamynn, Trimitor
+## X-Category: Map/Minimap
+
+# Load
+Load.xml

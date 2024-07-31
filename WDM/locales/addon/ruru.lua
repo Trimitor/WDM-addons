@@ -5,6 +5,8 @@ if not L then return end
 L["debugmode_text"] = "Режим отладки"
 L["show_minimap_text"] = "Иконка карты мира (до Dragonflight)"
 L["show_minimap_warn_text"] = "|c00FD1A36Отключите, если используете аддоны, изменяющие интерфейс |r (требуется перезагрузка интерфейса - /reload)"
+L["microdungeons_text"] = "Режим для пещер и шахт |c00FD1A36beta|r"
+L["microdungeons_warn_text"] = "Включить набор исправлений для пещер и шахт |c00FD1A36(требуется наличие файла patch-ruRU-N.MPQ)|r"
 L["atlas_tracking_title_text"] = "Показать:"
 L["show_instance_text"] = "Входы в подземелья"
 L["show_taxinode_alliance_text"] = "Полеты Альянса"

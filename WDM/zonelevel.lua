@@ -12,6 +12,7 @@ local defaults = { profile = {
     ["show_taxinode_continent"] = true,
     ["show_taxinode_continent_opposite"] = false,
     ["show_instance"] = true,
+    ["microdungeons"] = false,
     ["debugmode"] = false,
 },}
 
