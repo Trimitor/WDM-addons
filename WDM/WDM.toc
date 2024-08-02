@@ -3,7 +3,7 @@
 ## Title-ruRU: WoW|cff228B22 Карты подземелий|r
 ## Notes: It is a great addition to the classic dungeon map patch. Expands the features, adds new elements related to the World Map.
 ## Notes-ruRU: Отличное дополнение к патчу карт классических подземелий. Расширяет возможности, добавляя новые элементы, связанные с картой мира.
-## Version: 1.0.5
+## Version: 1.0.6
 ## Author: Trimitor
 ## SavedVariables: WDMdb
 ## OptionalDeps: LibBabble-Zone-3.0, LibBabble-SubZone-3.0, Ace3, Astrolabe
