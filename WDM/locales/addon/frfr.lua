@@ -1,6 +1,19 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "frFR")
 if not L then return end
 
+L["debugmode_text"] = "Mode débogage"
+L["show_minimap_text"] = "Icône de la carte du monde (avant Dragonflight)"
+L["show_minimap_warn_text"] = "|c00FD1A36Désactivé si vous utilisez des modules complémentaires qui modifient l'interface |r (rechargement de l'interface requis - /reload)"
+L["microdungeons_text"] = "Mode grottes et mines |c00FD1A36beta|r"
+L["microdungeons_warn_text"] = "Activer l'ensemble de correctifs pour les grottes et les mines |c00FD1A36(nécessite le patch-frFR-N.MPQ)|r"
+L["atlas_tracking_title_text"] = "Afficher :"
+L["show_instance_text"] = "Entrée du donjon"
+L["show_taxinode_alliance_text"] = "Vols Alliance"
+L["show_taxinode_horde_text"] = "Vols de la Horde"
+L["show_taxinode_continent_alliance_text"] = "Navires de l'Alliance"
+L["show_taxinode_continent_horde_text"] = "Dirigeables de la Horde"
+L["show_zonelevel_text"] = "Niveaux d'emplacement"
+
 L["taxinode_acherus"] = "Achérus : le fort d'Ébène"
 L["taxinode_aeriepeak"] = "Nid-de-l'Aigle, les Hinterlands"
 L["taxinode_agmarshammer"] = "Marteau d'Agmar, Désolation des dragons"

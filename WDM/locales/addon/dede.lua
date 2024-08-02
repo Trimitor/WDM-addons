@@ -1,6 +1,19 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "deDE")
 if not L then return end
 
+L["debugmode_text"] = "Debug-Modus"
+L["show_minimap_text"] = "Weltkartensymbol (vor Dragonflight)"
+L["show_minimap_warn_text"] = "|c00FD1A36Deaktivieren Sie diese Option, wenn Sie Add-ons verwenden, die die |r-Schnittstelle ändern (Neuladen der Schnittstelle erforderlich – /reload)"
+L["microdungeons_text"] = "Modus für Höhlen und Minen |c00FD1A36beta|r"
+L["microdungeons_warn_text"] = "Patch-Set für Höhlen und Minen aktivieren |c00FD1A36(erfordert patch-deDE-N.MPQ)|r"
+L["atlas_tracking_title_text"] = "Anzeigen:"
+L["show_instance_text"] = "Dungeon-Eingänge"
+L["show_taxinode_alliance_text"] = "Allianzflüge"
+L["show_taxinode_horde_text"] = "Flüge der Horde"
+L["show_taxinode_continent_alliance_text"] = "Allianzschiffe"
+L["show_taxinode_continent_horde_text"] = "Luftschiffe der Horde"
+L["show_zonelevel_text"] = "Standortebenen"
+
 L["taxinode_acherus"] = "Acherus: Die Schwarze Festung"
 L["taxinode_aeriepeak"] = "Nistgipfel, Hinterland"
 L["taxinode_agmarshammer"] = "Agmars Hammer, Drachenöde"

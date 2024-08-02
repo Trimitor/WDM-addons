@@ -1,7 +1,6 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "ruRU")
 if not L then return end
 
-
 L["debugmode_text"] = "Режим отладки"
 L["show_minimap_text"] = "Иконка карты мира (до Dragonflight)"
 L["show_minimap_warn_text"] = "|c00FD1A36Отключите, если используете аддоны, изменяющие интерфейс |r (требуется перезагрузка интерфейса - /reload)"

@@ -1,6 +1,19 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "esMX")
 if not L then return end
 
+L["debugmode_text"] = "Modo de depuración"
+L["show_minimap_text"] = "Icono del mapa mundial (antes de Dragonflight)"
+L["show_minimap_warn_text"] = "|c00FD1A36Desactivar si usa complementos que cambian la interfaz |r (se requiere recarga de la interfaz - /reload)"
+L["microdungeons_text"] = "Modo para cuevas y minas |c00FD1A36beta|r"
+L["microdungeons_warn_text"] = "Habilitar conjunto de parches para cuevas y minas |c00FD1A36(requiere parche-esMX-N.MPQ)|r"
+L["atlas_tracking_title_text"] = "Mostrar:"
+L["show_instance_text"] = "Entradas a las mazmorras"
+L["show_taxinode_alliance_text"] = "Vuelos de la Alianza"
+L["show_taxinode_horde_text"] = "Vuelos de la Horda"
+L["show_taxinode_continent_alliance_text"] = "Barcos de la Alianza"
+L["show_taxinode_continent_horde_text"] = "Dirigibles de la Horda"
+L["show_zonelevel_text"] = "Niveles de ubicación"
+
 L["taxinode_acherus"] = "Acherus: El Bastión de Ébano"
 L["taxinode_aeriepeak"] = "Pico Nidal, Tierras del Interior"
 L["taxinode_agmarshammer"] = "Martillo de Agmar, Cementerio de Dragones"

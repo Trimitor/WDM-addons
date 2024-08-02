@@ -1,6 +1,19 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("WDM", "enCN")
 if not L then return end
 
+L["debugmode_text"] = "调试模式"
+L["show_minimap_text"] = "世界地图图标（Dragonflight 之前）"
+L["show_minimap_warn_text"] = "|c00FD1A36如果您使用更改 |r 接口的插件则禁用（需要重新加载接口 - /reload）"
+L["microdungeons_text"] = "洞穴和矿井模式 |c00FD1A36beta|r"
+L["microdungeons_warn_text"] = "启用洞穴和矿井补丁集|c00FD1A36（需要使用 patch-enCN-N.MPQ）|r"
+L["atlas_tracking_title_text"] = "显示："
+L["show_instance_text"] = "地牢入口"
+L["show_taxinode_alliance_text"] = "联盟航班"
+L["show_taxinode_horde_text"] = "部落航班"
+L["show_taxinode_Continental_alliance_text"] = "联盟舰船"
+L["show_taxinode_Continue_horde_text"] = "部落飞艇"
+L["show_zonelevel_text"] = "位置级别"
+
 L["taxinode_acherus"] = "阿彻鲁斯：黑锋要塞"
 L["taxinode_aeriepeak"] = "鹰巢山，辛特兰"
 L["taxinode_agmarshammer"] = "阿格玛之锤，龙骨荒野"
