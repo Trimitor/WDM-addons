@@ -1,8 +1,24 @@
 ## Interface: 30300
 ## Title: WoW|cff228B22 Dungeon Maps|r
 ## Title-ruRU: WoW|cff228B22 Карты подземелий|r
+## Title-esES: WoW|cff228B22 Mapas de mazmorras|r
+## Title-esMX: WoW|cff228B22 Mapas de mazmorras|r
+## Title-deDE: WoW|cff228B22 Dungeon-Karten|r
+## Title-frFR: WoW|cff228B22 Cartes de donjon|r
+## Title-koKR: WoW|cff228B22 던전 지도|r
+## Title-enCN: WoW|cff228B22 地下城地图|r
+## Title-zhCN: WoW|cff228B22 地下城地图|r
+## Title-zhTW: WoW|cff228B22 地下城地圖|r
 ## Notes: It is a great addition to the classic dungeon map patch. Expands the features, adds new elements related to the World Map.
 ## Notes-ruRU: Отличное дополнение к патчу карт классических подземелий. Расширяет возможности, добавляя новые элементы, связанные с картой мира.
+## Notes-esES: Una gran adición al parche clásico del mapa de mazmorras. Amplía capacidades añadiendo nuevos elementos relacionados con el mapa mundial.
+## Notes-esMX: Una gran adición al parche clásico del mapa de mazmorras. Amplía capacidades añadiendo nuevos elementos relacionados con el mapa mundial.
+## Notes-deDE: Eine tolle Ergänzung zum klassischen Dungeon-Karten-Patch. Erweitert die Möglichkeiten durch das Hinzufügen neuer Elemente im Zusammenhang mit der Weltkarte.
+## Notes-frFR: Un excellent ajout au patch classique de carte de donjon. Étend les capacités en ajoutant de nouveaux éléments liés à la carte du monde.
+## Notes-koKR: 클래식 던전 지도 패치에 큰 도움이 되었습니다. 세계지도와 관련된 새로운 요소를 추가하여 기능을 확장합니다.
+## Notes-enCN: 经典地下城地图补丁的绝佳补充。通过添加与世界地图相关的新元素来扩展功能。
+## Notes-zhCN: 经典地下城地图补丁的绝佳补充。通过添加与世界地图相关的新元素来扩展功能。
+## Notes-zhTW: 經典地下城地圖補丁的絕佳補充。透過新增與世界地圖相關的新元素來擴展功能。
 ## Version: 1.0.6
 ## Author: Trimitor
 ## SavedVariables: WDMdb
