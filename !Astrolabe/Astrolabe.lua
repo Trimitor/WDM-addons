@@ -1654,10 +1654,10 @@ WorldMapSize = {
                 yOffset = 17622.01367188
             },
             GnomereganEntrance10_ = {
-                height = 380,
-                width = 570,
-                xOffset = 17101.9707031,
-                yOffset = 16038.84375
+                height = 467.23193359000015,
+                width = 730.4874572780001,
+                xOffset = 17089.04187009,
+                yOffset = 15939.22998047,
             },
             GolBolarQuarry11_ = {
                 height = 249.3398437600008,
