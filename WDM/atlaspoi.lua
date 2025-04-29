@@ -101,40 +101,29 @@ function AtlasPOI:AddTrackingOptions()
         }
     }
 
-    AtlasTO = CreateFrame("Frame", nil, WorldMapButton)
-    AtlasTO:SetSize(32, 32)
-    AtlasTO:SetPoint("TOPRIGHT", -4, -4, WorldMapButton)
+    local button = CreateFrame("Button", "WDM_WorldMapButton", WorldMapFrame)
+    button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
+    button:SetPoint("TOPRIGHT", WorldMapButton, "TOPRIGHT", -4, -2);
+    button:SetFrameLevel(99)
+    button:SetSize(32, 32)
 
-    AtlasTO.Background = AtlasTO:CreateTexture(nil, "BACKGROUND")
-    AtlasTO.Icon = AtlasTO:CreateTexture(nil, "ARTWORK")
-    AtlasTO.IconOverlay = AtlasTO:CreateTexture(nil, "OVERLAY")
+    local background = button:CreateTexture(nil, "BACKGROUND")
+    background:SetSize(25, 25)
+    background:SetPoint("TOPLEFT", 2, -4)
+    background:SetTexture("Interface\\Minimap\\UI-Minimap-Background")
 
-    AtlasTO.Background:SetSize(25, 25)
-    AtlasTO.Background:SetPoint("TOPLEFT", 2, -4)
-    AtlasTO.Background:SetTexture("Interface\\Minimap\\UI-Minimap-Background")
+    local icon = button:CreateTexture(nil, "ARTWORK")
+    icon:SetSize(20, 20)
+    icon:SetPoint("TOPLEFT", 6, -5)
+    icon:SetTexture("Interface\\Minimap\\Tracking\\None")
 
-    AtlasTO.Icon:SetSize(20, 20)
-    AtlasTO.Icon:SetPoint("TOPLEFT", 6, -6)
-    AtlasTO.Icon:SetTexture("Interface\\Minimap\\Tracking\\None")
-
-    AtlasTO.IconOverlay:SetPoint("TOPLEFT", AtlasTO.Icon)
-    AtlasTO.IconOverlay:SetPoint("BOTTOMRIGHT", AtlasTO.Icon)
-
-    AtlasTO.Button = CreateFrame("Button", nil, AtlasTO)
-    AtlasTO.Button:SetSize(32, 32)
-    AtlasTO.Button:SetPoint("TOPLEFT")
-    AtlasTO.Button:SetHighlightTexture(
-        "Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
-
-    AtlasTO.Button.Border = AtlasTO.Button:CreateTexture(nil, "BORDER")
-
-    AtlasTO.Button.Border:SetSize(54, 54)
-    AtlasTO.Button.Border:SetPoint("TOPLEFT")
-    AtlasTO.Button.Border:SetTexture(
-        "Interface\\Minimap\\MiniMap-TrackingBorder")
+    local border = button:CreateTexture(nil, "OVERLAY")
+    border:SetSize(54, 54)
+    border:SetPoint("TOPLEFT")
+    border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
 
     local menuFrame;
-    AtlasTO.Button:SetScript("OnClick", function(self, button, down)
+    button:SetScript("OnClick", function(self, button, down)
         if not menuFrame then
             menuFrame = CreateFrame("Frame", "MyMenuFrame", UIParent,
                                     "UIDropDownMenuTemplate")
@@ -197,24 +186,64 @@ function AtlasPOI:GetAtlasTOtext(category, opposite)
             faction = "alliance"
         end
     end
+
     local twidth, theight, tleft, tright, ttop, tbottom =
         DData:GetAtlasTextureCoords(category, faction)
-    -- print()
-    return
-        "|TInterface\\AddOns\\WDM\\textures\\objecticonsatlas:18:18:0:0:512:1024:" ..
-            math.ceil(tleft * 512) .. ":" .. (math.ceil(tleft * 512) + twidth) ..
-            ":" .. math.ceil(ttop * 1024) .. ":" ..
-            (math.ceil(ttop * 1024) + theight) .. "|t " ..
-            L["show_" .. category .. "_" .. faction .. "_text"]
 
+    local textureWidth = 1024
+    local textureHeight = 1024
+
+    local x1 = math.ceil(tleft * textureWidth)
+    local x2 = math.ceil(tleft * textureWidth) + (math.ceil(tright * textureWidth) - math.ceil(tleft * textureWidth))
+    local y1 = math.ceil(ttop * textureHeight)
+    local y2 = math.ceil(ttop * textureHeight) + (math.ceil(tbottom * textureHeight) - math.ceil(ttop * textureHeight))
+
+    return
+        "|TInterface\\AddOns\\WDM\\textures\\objecticonsatlas:".. twidth ..":".. theight.. ":0:0:" ..
+        textureWidth .. ":" .. textureHeight .. ":" ..
+        x1 .. ":" .. x2 .. ":" .. y1 .. ":" .. y2 .. "|t " ..
+        L["show_" .. category .. "_" .. faction .. "_text"]
 end
 
-function AtlasPOI:WorldMapFrame_Update()
-    if WORLDMAP_SETTINGS.size == WORLDMAP_WINDOWED_SIZE then
-        AtlasTO:SetScale(1 + WORLDMAP_SETTINGS.size)
-    else
-        AtlasTO:SetScale(1)
+local function AlignQuestieWithWDM()
+    local questieButton = _G["Questie_WorldMapButton"]
+    local wdmButton = _G["WDM_WorldMapButton"]
+
+    if questieButton and wdmButton then
+        questieButton:ClearAllPoints()
+        questieButton:SetPoint("RIGHT", wdmButton, "LEFT", 0, 0)
+        questieButton:Show()
+        return true
     end
+
+    return false
+end
+
+local function WaitForQuestieToAlign()
+    local waitFrame = CreateFrame("Frame")
+    local elapsed = 0
+    local interval = 0.5
+    waitFrame:SetScript("OnUpdate", function(self, delta)
+        elapsed = elapsed + delta
+        if elapsed >= interval then
+            elapsed = 0
+            if AlignQuestieWithWDM() then
+                self:SetScript("OnUpdate", nil)
+            end
+        end
+    end)
+end
+
+local f = CreateFrame("Frame")
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+f:SetScript("OnEvent", function()
+    if IsAddOnLoaded("Questie-335") then
+        WaitForQuestieToAlign()
+    end
+end)
+
+
+function AtlasPOI:WorldMapFrame_Update()
     self:ShowPOIs()
     DData:DebugCoords()
 end
@@ -228,3 +257,4 @@ function AtlasPOI:OnDisable()
     self:UnhookAll()
     WorldMapFrame_Update()
 end
+
