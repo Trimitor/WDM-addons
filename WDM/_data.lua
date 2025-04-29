@@ -21,16 +21,16 @@ local defaults = { profile = {
 -- Texture
 local atlasTex = "Interface\\AddOns\\WDM\\Textures\\ObjectIconsAtlas"
 local atlasIcons = {
-    ["dungeon"]={22, 22, 0.912109, 0.955078, 0.0449219, 0.0664062, false, false},
-	["raid"]={22, 22, 0.689453, 0.732422, 0.166016, 0.1875, false, false},
+    ["dungeon"]={32, 32, 0.198242, 0.24707, 0.313477, 0.362305, false, false, "1x"},
+	["raid"]={32, 32, 0.198242, 0.24707, 0.364258, 0.413086, false, false, "1x"},
 
-    ["taxinode_alliance"]={18, 18, 0.958984, 0.994141, 0.0449219, 0.0625, false, false},
-	["taxinode_horde"]={18, 18, 0.474609, 0.509766, 0.177734, 0.195312, false, false},
-	["taxinode_neutral"]={18, 18, 0.513672, 0.548828, 0.177734, 0.195312, false, false},
+    ["taxinode_alliance"]={21, 21, 0.53418, 0.56543, 0.535156, 0.566406, false, false, "1x"},
+	["taxinode_horde"]={21, 21, 0.53418, 0.56543, 0.568359, 0.599609, false, false, "1x"},
+	["taxinode_neutral"]={21, 21, 0.53418, 0.56543, 0.601562, 0.632812, false, false, "1x"},
 
-    ["taxinode_continent_alliance"]={27, 27, 0.00195312, 0.0546875, 0.608398, 0.634766, false, false},
-	["taxinode_continent_horde"]={27, 27, 0.00195312, 0.0546875, 0.636719, 0.663086, false, false},
-	["taxinode_continent_neutral"]={27, 27, 0.00195312, 0.0546875, 0.665039, 0.691406, false, false},
+    ["taxinode_continent_alliance"]={28, 28, 0.77832, 0.84082, 0.12793, 0.19043, false, false, "1x"},
+	["taxinode_continent_horde"]={28, 28, 0.907227, 0.969727, 0.12793, 0.19043, false, false, "1x"},
+	["taxinode_continent_neutral"]={28, 28, 0.133789, 0.196289, 0.256836, 0.319336, false, false, "1x"},
 }
 
 -- Datas

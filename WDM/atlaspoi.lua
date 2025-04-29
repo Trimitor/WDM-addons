@@ -180,7 +180,7 @@ function AtlasPOI:ShowPOIs()
                                       y);
             worldMapAtlasPOI.name = text;
             worldMapAtlasPOI.description = desc;
-            worldMapAtlasPOI.mapLinkID = 0;
+            --worldMapAtlasPOI.mapLinkID = 0;
             worldMapAtlasPOI:Show();
         else
             worldMapAtlasPOI:Hide();
