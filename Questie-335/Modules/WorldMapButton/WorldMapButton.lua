@@ -17,6 +17,7 @@ local mapButton
 
 function WorldMapButton.Initialize()
     mapButton = KButtons:Add("QuestieWorldMapButtonTemplate", "BUTTON")
+	WorldMapButton.Toggle(Questie.db.profile.mapShowHideEnabled)
 
     Questie.WorldMap = {
         Button = mapButton
