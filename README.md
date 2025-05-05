@@ -1,5 +1,5 @@
 # WDM Addons
-Collection of addons compatible with Classic and TBC dungeon maps pat for the Wrath of the Lich King client.
+Collection of addons compatible with [Classic and TBC dungeon maps patch](https://github.com/Trimitor/WDM-patch) for the Wrath of the Lich King client.
 This collection contains the following addons
 
 ### WDM (WoW Dungeon Maps).
