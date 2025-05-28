@@ -164,7 +164,7 @@ L["taxinode_zoramgaroutpost"] = "Außenposten von Zoram'gar, Eschental"
 L["taxinode_zulaman"] = "Zul'Aman, Geisterlande"
 
 L["taxinode_continent_auberdine"] = "Schiff nach Auberdine"
-L["taxinode_continent_bootybay"] = "Schiff nach Beutebucht"
+L["taxinode_continent_bootybay"] = "Schiff zur Beutebucht"
 L["taxinode_continent_brill"] = "Zeppelin nach Brill"
 L["taxinode_continent_daggercapbay"] = "Schiff zur Dolchbucht"
 L["taxinode_continent_durotar"] = "Zeppelin nach Durotar"
