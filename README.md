@@ -28,6 +28,13 @@ Changes:
 - Added data for Caverns and Mines patch
 
 ---
+### QuestHelper
+**Original addon:** [QuestHelper on GitHub](https://github.com/zorbathut/questhelper)
+
+Changes:
+- Added data for Caverns and Mines patch
+
+---
 ### Questie-335
 **Original addon:** [Questie on GitHub](https://github.com/Questie/Questie)
 
