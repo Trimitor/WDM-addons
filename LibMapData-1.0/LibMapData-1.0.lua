@@ -2001,9 +2001,9 @@ do
 			['floors'] = 0, ['name'] = "TheGrizzledDen7_", ['rzti'] = 0, ['map_type'] = 0, ['continent'] = 1, ['link'] = 0,['transform'] = 0,
 			[1] = {505.5,337.0,-32.75,-5313.0,472.75,-5650.0},
 		}
-		mapData[1008] = { 
-			['floors'] = 0, ['name'] = "FrostmaneHold8_", ['rzti'] = 0, ['map_type'] = 0, ['continent'] = 1, ['link'] = 0,['transform'] = 0,
-			[1] = {195.0,130.0,-779.0,-5470.0,-584.0,-5600.0},
+		mapData[1008] = {
+			['floors'] = 0, ['name'] = "FrostmaneHold8_", ['rzti'] = 0, ['map_type'] = 0, ['continent'] = 1, ['link'] = 0, ['transform'] = 0,
+			[1] = {341.883179,234.391113,-848.060364,-5484.786133,-506.177185,-5719.177246},
 		}
 		mapData[1009] = { 
 			['floors'] = 0, ['name'] = "FrostmaneHovel9_", ['rzti'] = 0, ['map_type'] = 0, ['continent'] = 1, ['link'] = 0,['transform'] = 0,
