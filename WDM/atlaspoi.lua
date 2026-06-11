@@ -101,11 +101,33 @@ function AtlasPOI:AddTrackingOptions()
         }
     }
 
-    local button = CreateFrame("Button", "WDM_WorldMapButton", WorldMapFrame)
+    local button = CreateFrame("Button", "WDM_WorldMapButton", WorldMapButton)
     button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
-    button:SetPoint("TOPRIGHT", WorldMapButton, "TOPRIGHT", -4, -2);
-    button:SetFrameLevel(99)
+    button:ClearAllPoints()
+    button:SetPoint("TOPRIGHT", WorldMapButton, "TOPRIGHT", -4, -4)
+    button:SetFrameStrata("TOOLTIP")
+    button:SetFrameLevel(WorldMapButton:GetFrameLevel() + 2)
     button:SetSize(32, 32)
+
+    local function UpdateWDMWorldMapButtonScale()
+        if not button or not button.GetParent then
+            return
+        end
+
+        local parent = button:GetParent()
+        if not parent then
+            return
+        end
+
+        local parentScale = parent.GetEffectiveScale and parent:GetEffectiveScale() or parent:GetScale() or 1
+        local frameScale = WorldMapFrame and WorldMapFrame.GetEffectiveScale and WorldMapFrame:GetEffectiveScale() or 1
+
+        if parentScale == 0 then
+            parentScale = 1
+        end
+
+        button:SetScale(frameScale / parentScale)
+    end
 
     local background = button:CreateTexture(nil, "BACKGROUND")
     background:SetSize(25, 25)
@@ -122,14 +144,31 @@ function AtlasPOI:AddTrackingOptions()
     border:SetPoint("TOPLEFT")
     border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
 
-    local menuFrame;
+    local menuFrame
     button:SetScript("OnClick", function(self, button, down)
         if not menuFrame then
-            menuFrame = CreateFrame("Frame", "MyMenuFrame", UIParent,
-                                    "UIDropDownMenuTemplate")
+            menuFrame = CreateFrame("Frame", "MyMenuFrame", UIParent, "UIDropDownMenuTemplate")
         end
         EasyMenu(menu, menuFrame, self, 0, 0, "MENU", 0)
     end)
+
+    UpdateWDMWorldMapButtonScale()
+
+    if not button.wdmScaleHooked then
+        button.wdmScaleHooked = true
+
+        WorldMapButton:HookScript("OnShow", UpdateWDMWorldMapButtonScale)
+        WorldMapButton:HookScript("OnSizeChanged", UpdateWDMWorldMapButtonScale)
+
+        if WorldMapFrame then
+            WorldMapFrame:HookScript("OnShow", UpdateWDMWorldMapButtonScale)
+            WorldMapFrame:HookScript("OnSizeChanged", UpdateWDMWorldMapButtonScale)
+        end
+
+        if type(WorldMapFrame_Update) == "function" then
+            hooksecurefunc("WorldMapFrame_Update", UpdateWDMWorldMapButtonScale)
+        end
+    end
 
 end
 
@@ -205,43 +244,6 @@ function AtlasPOI:GetAtlasTOtext(category, opposite)
         L["show_" .. category .. "_" .. faction .. "_text"]
 end
 
-local function AlignQuestieWithWDM()
-    local questieButton = _G["Questie_WorldMapButton"]
-    local wdmButton = _G["WDM_WorldMapButton"]
-
-    if questieButton and wdmButton then
-        questieButton:ClearAllPoints()
-        questieButton:SetPoint("RIGHT", wdmButton, "LEFT", 0, 0)
-        questieButton:Show()
-        return true
-    end
-
-    return false
-end
-
-local function WaitForQuestieToAlign()
-    local waitFrame = CreateFrame("Frame")
-    local elapsed = 0
-    local interval = 0.5
-    waitFrame:SetScript("OnUpdate", function(self, delta)
-        elapsed = elapsed + delta
-        if elapsed >= interval then
-            elapsed = 0
-            if AlignQuestieWithWDM() then
-                self:SetScript("OnUpdate", nil)
-            end
-        end
-    end)
-end
-
-local f = CreateFrame("Frame")
-f:RegisterEvent("PLAYER_ENTERING_WORLD")
-f:SetScript("OnEvent", function()
-    if IsAddOnLoaded("Questie-335") then
-        WaitForQuestieToAlign()
-    end
-end)
-
 
 function AtlasPOI:WorldMapFrame_Update()
     self:ShowPOIs()
@@ -257,4 +259,3 @@ function AtlasPOI:OnDisable()
     self:UnhookAll()
     WorldMapFrame_Update()
 end
-

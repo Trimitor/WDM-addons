@@ -35,15 +35,6 @@ Changes:
 - Added data for Caverns and Mines patch
 
 ---
-### Questie-335
-**Original addon:** [Questie on GitHub](https://github.com/Questie/Questie)
-
-**Fork used in this pack:** [widxwer/Questie (v9.5.1)](https://github.com/widxwer/Questie)
-
-Changes:
-- Added data for Caverns and Mines patch
-
----
 ### !Astrolabe
 
 > [!IMPORTANT]

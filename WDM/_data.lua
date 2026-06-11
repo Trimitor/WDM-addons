@@ -215,6 +215,8 @@ local atlasPOI = {
             { "alliance", 6421.85, 818.768, L["taxinode_continent_stormwind"] },
             { "alliance", 6579.306, 768.255, L["taxinode_continent_teldrassil"] },
             { "alliance", 6542.416, 926.931, L["taxinode_continent_exodar"] },
+            { "alliance", 8675.0, 912.0, L["taxinode_continent_auberdine"] },
+            { "alliance", 5868.0, 6269.0, L["taxinode_continent_auberdine"] },
             { "horde", 1192.31, -4143.297, L["taxinode_continent_warsonghold"] },
             { "horde", 1134.284, -4141.549, L["taxinode_continent_thunderbluff"] },
             { "horde", -1029.529, 365.004, L["taxinode_continent_durotar"] },

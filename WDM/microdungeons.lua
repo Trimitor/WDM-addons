@@ -259,10 +259,14 @@ end
 function GetCurrentMicroDungeonLevel()
     local mapName, _, _ = GetMapInfo()
     local curmdlist = MD.mdlevels[mapName]
+    if not curmdlist then return 1 end
+
     local match = tonumber(string.match(mapName, "%d+"))
     if match == nil then match = 0 end
 
     for i = 1, #curmdlist do if curmdlist[i][2] == match then return i end end
+    
+    return 1
 end
 
 function MicroDungeonLevelDropDown_Initialize()

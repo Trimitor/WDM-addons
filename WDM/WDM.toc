@@ -19,7 +19,7 @@
 ## Notes-enCN: 经典地下城地图补丁的绝佳补充。通过添加与世界地图相关的新元素来扩展功能。
 ## Notes-zhCN: 经典地下城地图补丁的绝佳补充。通过添加与世界地图相关的新元素来扩展功能。
 ## Notes-zhTW: 經典地下城地圖補丁的絕佳補充。透過新增與世界地圖相關的新元素來擴展功能。
-## Version: 1.0.6
+## Version: 1.0.9
 ## Author: Trimitor
 ## SavedVariables: WDMdb
 ## OptionalDeps: LibBabble-Zone-3.0, LibBabble-SubZone-3.0, Ace3, Astrolabe
